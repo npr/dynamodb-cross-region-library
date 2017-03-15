@@ -154,7 +154,7 @@ public class CommandLineInterface {
                                                                                    // available, otherwise it is safer
                                                                                    // to start
                                                                                    // at beginning of the stream
-                //.withMetricsLevel("summary")
+                //.withMetricsLevel("summary") // setting the metrics level
                 .withMaxRecords(getRecordsLimit) // we want the maximum batch size to
                                                  // avoid network transfer
                 // latency overhead
