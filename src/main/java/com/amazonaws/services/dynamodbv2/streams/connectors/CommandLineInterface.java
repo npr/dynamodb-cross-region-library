@@ -154,6 +154,7 @@ public class CommandLineInterface {
                                                                                    // available, otherwise it is safer
                                                                                    // to start
                                                                                    // at beginning of the stream
+                //.withMetricsLevel("summary")
                 .withMaxRecords(getRecordsLimit) // we want the maximum batch size to
                                                  // avoid network transfer
                 // latency overhead
@@ -162,6 +163,7 @@ public class CommandLineInterface {
                                                                                                       // amount of time
                 .withValidateSequenceNumberBeforeCheckpointing(false) // Remove calls to GetShardIterator
                 .withFailoverTimeMillis(DynamoDBConnectorConstants.KCL_FAILOVER_TIME); // avoid losing leases too often
+                
 
             // create the KCL worker for this connector
             Worker worker = new Worker(factory, kclConfig, streamsAdapterClient, kclDynamoDBClient, kclCloudWatchClient);
